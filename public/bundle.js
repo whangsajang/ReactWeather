@@ -25485,29 +25485,20 @@
 	var React = __webpack_require__(8);
 	var Nav = __webpack_require__(230);
 
-	/*var Main = React.createClass({
-	    render: function (){
-	        return(
-	            <div>
-	                <Nav/>
-	                <h2>Main Componenet</h2>
-	                {this.props.children}
-	            </div>
-	        );
-	    }
-	});*/
-
 	var Main = function Main(props) {
 	    return React.createElement(
 	        'div',
 	        null,
 	        React.createElement(Nav, null),
 	        React.createElement(
-	            'h2',
-	            null,
-	            'Main Componenet'
-	        ),
-	        props.children
+	            'div',
+	            { className: 'row' },
+	            React.createElement(
+	                'div',
+	                { className: 'columns medium-6 large-4 small-centered' },
+	                props.children
+	            )
+	        )
 	    );
 	};
 
@@ -27310,6 +27301,8 @@
 
 	var React = __webpack_require__(8);
 
+	var _require = __webpack_require__(166),
+	    Link = _require.Link;
 	/*var Example = React.createClass({
 	    render: function(){
 	        return(
@@ -27320,9 +27313,40 @@
 
 	var Example = function Example() {
 	    return React.createElement(
-	        'h2',
+	        'div',
 	        null,
-	        'Example Componenets'
+	        React.createElement(
+	            'h2',
+	            { className: 'text-center' },
+	            'Examples'
+	        ),
+	        React.createElement(
+	            'p',
+	            null,
+	            'Here are a few example locations to try out:'
+	        ),
+	        React.createElement(
+	            'ol',
+	            null,
+	            React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                    Link,
+	                    { to: '/?:location=Philadelphia' },
+	                    ' Philadelphia, Pa'
+	                )
+	            ),
+	            React.createElement(
+	                'li',
+	                null,
+	                React.createElement(
+	                    Link,
+	                    { to: '/?:location=Seoul' },
+	                    ' Seoul, South Korea'
+	                )
+	            )
+	        )
 	    );
 	};
 
